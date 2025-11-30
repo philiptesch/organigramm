@@ -338,7 +338,7 @@ function template_development(empolyerExecutiveTeamCTO,
                     <h6 class="sub_line">Vorstandsteam CTO</h6>
                     <div class="board_team">
                         <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerExecutiveTeamCTO[0].Name}</p></div>
-                        <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerExecutiveTeamCTO[1].Name}/p></div>
+                        <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerExecutiveTeamCTO[1].Name}</p></div>
                     </div>
                     <div class="board_team">
                         <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerExecutiveTeamCTO[2].Name}</p></div>

@@ -1,0 +1,186 @@
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/assets/fonts/NotoSans_ExtraCondensed-Regular.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+    font-family: 'Noto Sans', Arial, sans-serif;
+    margin: 0;
+    overflow-y: scroll;
+ min-height: 100vh;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.organigramm-headline {
+    color: white;
+    margin-right: 40%;
+    font-size: 40px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+
+@media (max-width: 1200px) {
+    .organigramm-headline {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .organigramm-headline {
+        font-size: 24px;    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    padding: 30px;
+    border-top: 4px solid;
+    border-image: linear-gradient(to right, 
+    #309afe, #309afe, 
+    #7aba00, #7aba00, 
+    #ffd02c, #ffd02c, 
+    #a52832, #a52832
+) 1;
+}
+
+
+.content {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+
+}
+.privacy {
+    padding: 20px;
+    margin-bottom: 100px;
+    height: 100%;
+}
+
+a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+.footer_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding-left: 80px;
+    padding-right: 80px;
+
+}
+
+
+@media (max-width: 500px) {
+   .footer_section {
+    justify-content: start;
+     padding-left: 0;
+    padding-right: 0;
+   }
+}
+
+.imprintAndprivacy {
+    cursor: pointer;
+} 
+
+.e_right {
+    color: black;
+}
+
+
+
+header {
+        background-color: black;
+   padding-left: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 4px solid;
+border-image: linear-gradient(to right, 
+    #309afe, #309afe, 
+    #7aba00, #7aba00, 
+    #ffd02c, #ffd02c, 
+    #a52832, #a52832
+) 1;
+padding: 15px;
+}
+
+
+@media (max-width: 1600px) {
+    header {
+     gap: 30px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    header {
+     gap: 80px;
+    }
+}
+
+@media (max-width: 400px) {
+    header {
+     gap: 0;
+    }
+}
+
+@media (max-width: 500px) {
+   a {
+    font-size: 13px;
+   }
+}
+
+
+@media (max-width: 450px) {
+   .footer_section {
+    padding-right: 50px;
+   }
+}
+
+
+.fullwidthForhr_and_accounting ,
+.fullwidthFormarketing_and_design {
+    width: 100%;
+}
+
+
+.caqag-logo {
+    width: 20%;
+    height: 100px;
+
+}
+
+
+@media (max-width: 1600px) {
+    .caqag-logo {
+       width: 30%;
+    }
+}
+
+main {
+    display: flex;
+    gap: 10px;
+        flex-wrap: wrap;
+
+}

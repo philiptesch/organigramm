@@ -10,8 +10,74 @@ body {
     font-family: 'Noto Sans', Arial, sans-serif;
     margin: 0;
     overflow-y: scroll;
+ min-height: 100vh;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    padding: 30px;
+    border-top: 4px solid;
+    border-image: linear-gradient(to right, 
+    #309afe, #309afe, 
+    #7aba00, #7aba00, 
+    #ffd02c, #ffd02c, 
+    #a52832, #a52832
+) 1;
+}
+
+.privacy {
+    padding: 20px;
+    margin-bottom: 100px;
+    height: 100%;
+}
+
+a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+.footer_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding-left: 80px;
+    padding-right: 80px;
 
 }
+
+
+@media (max-width: 500px) {
+   .footer_section {
+    justify-content: start;
+     padding-left: 0;
+    padding-right: 0;
+   }
+}
+
+.imprintAndprivacy {
+    cursor: pointer;
+} 
+
+
 
 
 header {
@@ -92,10 +158,11 @@ main {
 
 
 .place_rheinböllen {
-        color: white;
+    color: white;
     display: flex;
-        flex-direction: column;
-            flex: 1;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 100px;
 }
 
 
@@ -243,6 +310,7 @@ border-image: linear-gradient(to right,
     display: flex;
     flex: 1;
     flex-direction: column;
+    margin-bottom: 100px;
 }
 
 
