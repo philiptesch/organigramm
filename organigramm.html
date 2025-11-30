@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="./js/templates.js"></script>
+    
+    <title>CAQ Organigramm</title>
+</head>
+<body onload="getData()">
+
+<header>
+    <img class="caqag-logo" src="./assets/img/caqag-logo.svg" alt="">
+    <h1 class="organigramm-headline">Organigramm</h1>
+</header>
+
+<section class="middle">
+    <main>
+
+        <div class="place_rheinböllen">
+            <h3 class="place_headline">Standort: Rheinböllen</h3>
+            <section class="organigramm_place_rheinböllen">
+
+                <div>
+                    <div class="distribution">
+                        <div id="distribution_head_id" class="distribution_head width_for_distribution" onclick="showDistribution()">
+                            <h4 class="distribution_headline">Vertrieb</h4>
+                            <p>Perter Vertrieb</p>
+                        </div>
+                        <div id="distribution" class="unfold-container"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="keyaccount_content">
+                        <div class="keyaccount">
+                            <div id="keyaccount_head_id" class="keyaccount_head width_for_keyaccount" onclick="showkeyAccountMgmt()">
+                                <h4 class="keyaccount_headline">Key Account Mgmt</h4>
+                                <p>Peter</p>
+                            </div>
+                            <div id="keyAccountMgmt" class="unfold-container_for_particular_departments"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="technical_support">
+                        <div id="technical_support_headId" class="technical_support_head width_for_technicalSupport" onclick="showtechnicalSupport()">
+                            <h4 class="technical_support_headline">Technical Support</h4>
+                            <p>Bob 1</p>
+                        </div>
+                        <div id="technical_supportId" class="unfold-container"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="projects_consulting">
+                        <div id="projects_consultingheadId" class="projects_consulting_head width_for_projects_consulting" onclick="showProjectsConsulting()">
+                            <h4 class="projects_consulting_headline">Projects & Consulting</h4>
+                            <p>Maus 1</p>
+                        </div>
+                        <div id="projects_consultingId" class="unfold-container"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="special_operations">
+                        <div id="special_operationsheadId" class="special_operations_head width_for_special_operations" onclick="showSpecialOperations()">
+                            <h4 class="special_operations_headline">Special Operations</h4>
+                            <p>Katze 1</p>
+                        </div>
+                        <div id="special_operationsId" class="unfold-container"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="office_sales_coordination">
+                        <div id="office_sales_coordinationheadId" class="office_sales_coordinations_head width_for_office_sales_coordination" onclick="showOfficeAndSalesCoordination()">
+                            <h4 class="office_sales_coordinations_headline">Office & Sales Coordination</h4>
+                            <p>Pferd 1</p>
+                        </div>
+                        <div id="office_sales_coordinationId" class="unfold-container"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="marketing_and_design">
+                        <div class="fullwidthFormarketing_and_design">
+                            <div class="markting_content">
+                                <div id="marketingAndDesignHeadId" class="marketing_and_design_head width_for_marketingAndDesign" onclick="showMarketingAndDesign()">
+                                    <h4 class="marketing_and_design_headline">Marketing & Design</h4>
+                                    <p>Mario Pleier</p>
+                                </div>
+                                <div id="marketingAndDesignId" class="unfold-container_for_particular_departments"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="hr_and_accounting">
+                        <div class="fullwidthFormarketing_and_design">
+                            <div class="hr_and_accounting_section">
+                                <div id="hrAndAccountingHeadId" class="hr_and_accounting_head width_for_hr_and_accounting" onclick="showhrAndAccounting()">
+                                    <h4 class="hr_and_accounting_headline">HR & Rechnungswesen</h4>
+                                    <p>Blume 1</p>
+                                </div>
+                                <div id="hrAndAccountingId" class="unfold-container_for_particular_departments"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <div class="place_langgöns">
+            <h3 class="place_headline">Standort: Langgöns</h3>
+            <section class="organigramm_place_langgoens">
+
+                <div class="development">
+                    <div id="developmentHeadId" class="development_head" onclick="showDevelopment()">
+                        <h4 class="development_headline">Entwicklung</h4>
+                        <p>Uwe 1</p>
+                    </div>
+                    <div id="developmentId" class="place_langgöns_development unfold-container"></div>
+                </div>
+
+            </section>
+        </div>
+
+    </main>
+</section>
+
+</body>
+</html>

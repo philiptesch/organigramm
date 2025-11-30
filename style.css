@@ -1,0 +1,915 @@
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/assets/fonts/NotoSans_ExtraCondensed-Regular.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+    font-family: 'Noto Sans', Arial, sans-serif;
+    margin: 0;
+    overflow-y: scroll;
+
+}
+
+
+header {
+        background-color: black;
+   padding-left: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 4px solid;
+border-image: linear-gradient(to right, 
+    #309afe, #309afe, 
+    #7aba00, #7aba00, 
+    #ffd02c, #ffd02c, 
+    #a52832, #a52832
+) 1;
+padding: 15px;
+}
+
+
+@media (max-width: 1600px) {
+    header {
+     gap: 30px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    header {
+     gap: 80px;
+    }
+}
+
+.fullwidthForhr_and_accounting ,
+.fullwidthFormarketing_and_design {
+    width: 100%;
+}
+
+
+.caqag-logo {
+    width: 20%;
+    height: 100px;
+
+}
+
+
+@media (max-width: 1600px) {
+    .caqag-logo {
+       width: 30%;
+    }
+}
+
+main {
+    display: flex;
+    gap: 10px;
+        flex-wrap: wrap;
+
+}
+
+.organigramm-headline {
+    color: white;
+    margin-right: 40%;
+    font-size: 40px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+@media (max-width: 1200px) {
+    .organigramm-headline {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .organigramm-headline {
+        font-size: 24px;    }
+}
+
+
+
+.place_rheinböllen {
+        color: white;
+    display: flex;
+        flex-direction: column;
+            flex: 1;
+}
+
+
+.place_headline {
+    text-align: center;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-color: black;
+            border-bottom: 4px solid;
+border-image: linear-gradient(to right, 
+    #309afe, #309afe, 
+    #7aba00, #7aba00, 
+    #ffd02c, #ffd02c, 
+    #a52832, #a52832
+) 1;
+}
+
+.organigramm_place_rheinböllen {
+    display: flex;
+        gap: 5px;
+        
+
+        
+}
+
+.middle {
+        margin-top: 10px;
+}
+
+@media (max-width: 1700px) {
+    .organigramm_place_rheinböllen {
+        flex-wrap: wrap;
+    }
+}
+
+.organigramm_place_rheinböllen > div {
+    flex: 1;
+}
+
+.organigramm_place_langgoens {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+     flex-wrap: wrap;
+}
+
+.organigramm_place_langgoens > div {
+    flex: 1;
+}
+
+
+.distribution {
+    margin-top: 20px;
+    background-color: #c3c1c1;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.distribution_head {
+    background-color: #248bc7;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    cursor: pointer;
+
+
+}
+
+.distribution_head:hover {
+     text-decoration: underline;
+}
+
+.profile {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    margin-top: 10px;
+    height: 120px;
+    gap: 2px;
+}
+
+.profile_for_distribution {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    margin-top: 10px;
+    height: 120px;
+    gap: 2px;
+    flex-direction: column;
+}
+
+.persons-container {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+.profile_for_keyAccountMgmt {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    height: 120px;
+    gap: 2px;
+    border: solid 5px #c3c1c1;
+    box-sizing: border-box;
+    border-top: solid 8px #c3c1c1;;
+}
+
+
+.profil_img {
+    height: 70px;
+    width: 49px;
+}
+
+.profil_name {
+    color: black;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.place_langgöns{
+    color: white;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+
+
+.keyaccount {
+    margin-top: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     box-sizing: border-box;
+     margin-bottom: 10px;
+}
+
+
+.keyaccount_head {
+    background-color: #8570c7;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    cursor: pointer;
+    border: solid 5px #c3c1c1;;
+    box-sizing: border-box;
+}
+
+
+.keyaccount_head:hover {
+     text-decoration: underline;
+}
+
+.width_for_distribution {
+    min-width: 151px;
+}
+
+.width_for_projects_consulting {
+    min-width: 151px;
+}
+
+.width_for_technicalSupport {
+    min-width: 151px;
+}
+
+.width_for_keyaccount {
+    min-width: 110px;
+}
+
+.width_for_special_operations {
+      min-width: 151px;
+}
+
+.width_for_office_sales_coordination {
+      min-width: 202px;
+}
+
+.width_for_marketingAndDesign {
+      min-width: 210px;
+}
+
+.width_for_hr_and_accounting {
+      min-width: 210px;
+}
+.sub_line_distribution {
+    color: black;
+    margin-block-start: 0;
+    margin-block-end: 10px;
+}
+
+@keyframes unfold {
+    from { transform: scaleY(0); opacity: 0; }
+    to   { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes foldUp {
+    from { transform: scaleY(1); opacity: 1; }
+    to   { transform: scaleY(0); opacity: 0; }
+}
+
+.unfold-container {
+    overflow: hidden;
+    transform-origin: top;
+}
+
+.unfold-container_for_particular_departments {
+    overflow: hidden;
+    transform-origin: top;
+    width: 100%;
+}
+
+.unfold {
+    animation: unfold 0.35s ease forwards;
+}
+
+.unfold-close {
+    animation: foldUp 0.35s ease forwards;
+}
+
+#distribution, #keyAccountMgmt,
+#technical_supportId, #projects_consultingId, #special_operationsId,
+#office_sales_coordinationId {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.itAndtechnic {
+    margin-top: 10px;
+    border: solid 5px #c3c1c1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.partner_head {
+    background-color: #d0c7f3;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+
+.profile_partner_mgmt {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    margin-top: 12px;
+    gap: 2px;
+    flex-direction: column;
+}
+
+.profile_head {
+       display: flex;
+       gap: 2px;
+}
+
+.markting_content {
+    margin-bottom: 10px;
+}
+.prAndStrategie,
+.internalCommunications,
+.processOptimization {
+    background-color: #c3c1c1;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+ 
+
+.hr_and_accounting_section  {
+    margin-bottom: 10px;
+}
+
+.legal_department {
+    margin-top: 10px;
+    border: solid 5px #c3c1c1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.partner_content {
+    background-color: #c3c1c1;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.gfq_Referent_content {
+    margin-bottom: 10px;
+}
+
+
+.gfq_Referent {
+    background-color: #c3c1c1;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.gfq_Referent_head {
+    background-color: #105faf;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+
+.int_operations {
+    background-color: #c3c1c1;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.int_operations_head {
+    background-color: #76b6e3;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+
+.technical_support {
+    margin-top: 20px;
+    background-color: #c3c1c1;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.technical_support_head {
+    background-color: #a72861;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.technical_support_head:hover {
+    text-decoration: underline;
+}
+
+
+.profil_content {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+}
+.distribution_headline,
+.keyaccount_headline,
+.partner_headline,
+.gfq_Referent_headline,
+.int_operations_headline,
+.technical_support_headline,
+.projects_consulting_headline,
+.special_operations_headline,
+.office_sales_coordinations_headline,
+.marketing_and_design_headline,
+.other_departments_under_marketing_headline,
+.hr_and_accounting_headline,
+.development_headline
+{
+  font-size: 15px;
+    margin-block-start: 0;
+    margin-block-end: 0px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+
+.other_departments_under_marketing_headline_prAndStrategi {
+        background-color: #e39a23;
+}
+
+.profile_header_for_hr_and_accounting {
+        background-color: white;
+        width: 100%;
+        box-sizing: border-box;
+        border: solid 5px #c3c1c1;
+        border-top: solid 8px #c3c1c1;
+}
+
+.profile_header {
+        background-color: white;
+        width: 100%;
+        margin-top: 12px;
+        box-sizing: border-box;
+}
+
+.profile_header_for_marketing_and_design {
+        background-color: white;
+        width: 100%;
+        box-sizing: border-box;
+}
+
+.profile_technical_support {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    margin-top: 12px;
+    gap: 2px;
+}
+
+
+
+.projects_consulting {
+    margin-top: 20px;
+    background-color: #c3c1c1;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.projects_consulting_head {
+    background-color: #a72834;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.projects_consulting_head:hover {
+    text-decoration: underline;
+}
+
+.special_operations {
+    margin-top: 20px;
+    background-color: #c3c1c1;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.special_operations_head {
+    background-color: #961d29;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.special_operations_head:hover {
+    text-decoration: underline;
+}
+
+.profile_special_operations {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    margin-top: 12px;
+    gap: 2px;
+}
+
+
+
+.office_sales_coordination {
+    margin-top: 20px;
+    background-color: #c3c1c1;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.office_sales_coordinations_head {
+    background-color: #109597;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.office_sales_coordinations_head:hover {
+    text-decoration: underline;
+}
+
+
+.profile_office_sales_coordination {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    margin-top: 12px;
+    gap: 2px;
+}
+
+
+
+.marketing_and_design {
+    margin-top: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.marketing_and_design_head{
+    background-color: #e39a23;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    cursor: pointer;
+    border: solid 5px #c3c1c1;
+    box-sizing: border-box;
+}
+
+.marketing_and_design_head:hover {
+text-decoration: underline;
+}
+
+
+
+.profile_marketing_and_design {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    gap: 2px;
+    border: solid 5px #c3c1c1;
+    border-top: solid 8px #c3c1c1;
+    box-sizing: border-box;
+}
+
+
+.hr_and_accounting {
+    margin-top: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.hr_and_accounting_head{
+    background-color:#e39a23;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    cursor: pointer;
+    border-top: solid 5px #c3c1c1;
+    border-left: solid 5px #c3c1c1;
+    border-right: solid 5px #c3c1c1;
+    border-bottom:solid 5px #c3c1c1 ;
+    box-sizing: border-box;
+}
+
+.hr_and_accounting_head:hover {
+    text-decoration: underline;
+}
+
+.profile_hr_and_accounting {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    margin-top: 12px;
+    gap: 2px;
+    flex-direction: column;
+}
+
+
+.other_departments_under_marketing {
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.other_departments_under_marketing_head {
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.other_departments_under_marketing_headline_prAndStrategi {
+    background-color: #e39a23;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    border-bottom: solid 10px #c3c1c1;
+}
+.other_departments_under_marketing_head_int_operations {
+    background-color: #e39a23;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    border-bottom: solid 10px #c3c1c1;
+}
+.other_departments_under_marketing_headline_processOptimization {
+    background-color: #e39a23;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+border-bottom: solid 10px #c3c1c1;
+}
+
+.other_departments_under_marketing_headline_itAndtechnic {
+    background-color: #e39a23;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    border-bottom: solid 10px #c3c1c1;
+}
+.other_departments_under_marketing_headline_legal_department {
+    background-color: #e39a23;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    border-bottom: solid 10px #c3c1c1;
+}
+
+
+.development_head{
+    background-color:#7eaa29;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.development_head:hover {
+    text-decoration: underline;
+}
+
+
+.development {
+    margin-top: 20px;
+    background-color: #c3c1c1;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sub_line {
+    color:black;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.board_team {
+    display: flex; 
+    gap: 2px
+}
+
+.place_langgöns_development {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    width: 100%;
+}
+
+.place_langgöns_development > div {
+    flex: 1
+}
+
+.board {
+    width: 100%;
+    justify-content: flex-start;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    margin-top: 12px;
+    gap: 2px;
+    flex-direction: column;
+}
+
+.boardAndQualityEngineering {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    width: 100%;
+}
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 12px;
+}
+
+
+.horizontal_boards {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+.horizontal_boards > .board {
+    flex: 1; 
+}
+
+.development_test {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+
