@@ -4,10 +4,12 @@
 function template_distribution(empolyerDistribution) {
     return `   
 <div class="profile">
+  <div class="persons-container">
     <div class="person">
         <img class="profil_img" src="./assets/img/profilbild.png" alt="">
         <p class="profil_name"> ${empolyerDistribution[0].Name} </p>
     </div>
+</div>
 </div>
 
 <div class="profile_for_distribution">
@@ -407,7 +409,7 @@ function template_development(empolyerExecutiveTeamCTO,
                 </div>
                 </div>
                      <div class="development_test">
-                    <h6 class="sub_line">Softwaretest</h6>
+                    <h6 class="sub_line">Dokumentation</h6>
                             <div class="board_team">
                         <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerDocumentatio[0].Name}</p></div>
                         <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerDocumentatio[1].Name}</p></div>

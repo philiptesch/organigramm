@@ -1,5 +1,6 @@
 let empolyer = [];
-
+let template_technicalSupport_html  = `<div  class="profile_header">`
+let template_Distributiont_html  = `<div class="profile">`
 async function getData() {
     let response = await fetch("./empolyer.json");
     empolyer = await response.json();
@@ -105,13 +106,116 @@ function showDistribution() {
     let empolyerDistribution = getDataDistribution();
 
     if (show_template_distribution.innerHTML.trim() === "") {
-        helpFunctionForshowDistribution(show_template_distribution, toggleWidth_distribution, empolyerDistribution);
+        getDistrubtionEmployer(empolyerDistribution, show_template_distribution, toggleWidth_distribution);
     } else {
         helpFunctionForcloseDistribution(show_template_distribution, toggleWidth_distribution);
     }
 }
 
-function helpFunctionForshowDistribution(box, head, empolyerDistribution) {
+
+function getDistrubtionEmployer(empolyerDistribution, show_template_technicalSupport, toggleWidth_technicalSupport) {
+    template_Distributiont_html  = ` <div class="profile">`
+
+    for (let index = 0; index < empolyerDistribution.length; index++) {
+        const empolyerName = empolyerDistribution[index].Name;
+        const employer = empolyerDistribution[index]
+
+        let createCodeForempolyerDistribution = `
+            <div class="person">
+                <img class="profil_img" src="./assets/img/profilbild.png" alt="">
+                <p class="profil_name">${empolyerName}</p>
+            </div>
+        `;
+
+        if (!employer.Region) {
+                template_developmentwithNoRegion(empolyerDistribution, createCodeForempolyerDistribution, index, show_template_technicalSupport, toggleWidth_technicalSupport)
+        } else {
+            
+        }
+index === empolyerTechnicalSupport.length - 1
+        if (index === 0) {
+            getTemplatBeginningFortechnicalSupport(createCodeForempolyerTechnicalSupport, toggleWidth_technicalSupport, show_template_technicalSupport);
+        } 
+        else if (index % 3 === 0) {
+            getTemplatFirstElementFortechnicalSupport(createCodeForempolyerTechnicalSupport);
+        } 
+        else if (index % 3 === 2 && index !== empolyerTechnicalSupport.length - 1) {
+            getTemplatThirdElementFortechnicalSupport(createCodeForempolyerTechnicalSupport);
+        } else if (index === empolyerTechnicalSupport.length - 1) {
+            getTemplatLastElementFortechnicalSupport(createCodeForempolyerTechnicalSupport, show_template_technicalSupport);
+        }
+        else {
+            getTemplatNextElementFortechnicalSupport(createCodeForempolyerTechnicalSupport);
+        }
+    }
+}
+
+
+function template_developmentwithNoRegion(empolyerDistribution, createCodeForempolyerDistribution, index, show_template_technicalSupport, toggleWidth_technicalSupport) {
+   
+    if (index === empolyerDistribution.length - 1) {
+           showLasttemplate_developmentwithNoRegion(createCodeForempolyerDistribution)
+    } else if (index % 3 === 2) {
+        showThirdtemplate_developmentwithNoRegion(createCodeForempolyerDistribution)
+    } else if (index % 3 === 0) {
+            showFirsttemplate_developmentwithNoRegion(createCodeForempolyerDistribution)
+    }{
+        showNexttemplate_developmentwithNoRegion(createCodeForempolyerDistribution) 
+    }
+
+    toggleWidth_technicalSupport.classList.remove("width_for_distribution");
+    show_template_technicalSupport.classList.remove('unfold-close');
+    show_template_technicalSupport.classList.add('unfold')
+    
+}
+
+
+function showThirdtemplate_developmentwithNoRegion(createCodeForempolyerDistribution) {
+     template_Distributiont_html += `${createCodeForempolyerDistribution}</div>`
+}
+
+function showFirsttemplate_developmentwithNoRegion(createCodeForempolyerDistribution) {
+     template_Distributiont_html += ` <div class="persons-container">${createCodeForempolyerDistribution}`
+}
+
+function showNexttemplate_developmentwithNoRegion(createCodeForempolyerDistribution) {
+     template_Distributiont_html += ` ${createCodeForempolyerDistribution}`
+}
+
+
+function showLasttemplate_developmentwithNoRegion(createCodeForempolyerDistribution) {
+     template_Distributiont_html += ` ${createCodeForempolyerDistribution}</div> </div`;
+}
+
+function getTemplatBeginningForDistribution(createCodeForempolyerTechnicalSupport, toggleWidth_technicalSupport, show_template_technicalSupport) {
+    let html = `<div class="profile_technical_support">`;
+    template_technicalSupport_html += `${html} ${createCodeForempolyerTechnicalSupport}`; // Header sofort schließen
+    toggleWidth_technicalSupport.classList.remove("width_for_technicalSupport");
+    show_template_technicalSupport.classList.remove('unfold-close');
+    show_template_technicalSupport.classList.add('unfold');
+}
+
+function getTemplatFirstElementForDistribution(createCodeForempolyerTechnicalSupport){
+    template_technicalSupport_html += `<div class="profil_content">${createCodeForempolyerTechnicalSupport}`;
+}
+
+function getTemplatNextElementForDistribution(createCodeForempolyerTechnicalSupport){
+    template_technicalSupport_html += createCodeForempolyerTechnicalSupport;
+}
+
+function getTemplatThirdElementForDistribution(createCodeForempolyerTechnicalSupport){
+    template_technicalSupport_html += `${createCodeForempolyerTechnicalSupport}</div>`; // Profil_content schließen
+}
+function getTemplatLastElementDistributiont(createCodeForempolyerTechnicalSupport,show_template_technicalSupport) {
+    template_technicalSupport_html += `${createCodeForempolyerTechnicalSupport}</div> </div>`
+    show_template_technicalSupport.innerHTML =`${template_technicalSupport_html}`
+}
+
+
+
+
+
+function helpFunctionForshowDistribution(empolyerDistribution, box, head) {
     box.innerHTML = template_distribution(empolyerDistribution);
     head.classList.remove("width_for_distribution");
     box.classList.remove('unfold-close');
@@ -124,6 +228,21 @@ function helpFunctionForcloseDistribution(box, head) {
     setTimeout(() => { box.innerHTML = ""; }, 300);
     head.classList.add("width_for_distribution");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function showkeyAccountMgmt() {
     let show_template_showkeyAccountMgmt = document.getElementById("keyAccountMgmt");
@@ -165,12 +284,66 @@ function showtechnicalSupport() {
     let show_template_technicalSupport = document.getElementById("technical_supportId");
     let toggleWidth_technicalSupport = document.getElementById("technical_support_headId");
     let empolyerTechnicalSupport = getTechnicalSupport();
-
     if (show_template_technicalSupport.innerHTML.trim() === "") {
-        helpFunctionForshowtechnicalSupport(show_template_technicalSupport, toggleWidth_technicalSupport, empolyerTechnicalSupport);
+        gettechnicalSupportEmployer(empolyerTechnicalSupport, show_template_technicalSupport, toggleWidth_technicalSupport ) 
     } else {
-        helpFunctionForclosetechnicalSupport(show_template_technicalSupport, toggleWidth_technicalSupport);
+        helpFunctionForclosetechnicalSupport(show_template_technicalSupport, toggleWidth_technicalSupport )
+    }   
+}
+
+
+function gettechnicalSupportEmployer(empolyerTechnicalSupport, show_template_technicalSupport, toggleWidth_technicalSupport) {
+
+    template_technicalSupport_html  = ` <div  class="profile_header">`
+
+    for (let index = 0; index < empolyerTechnicalSupport.length; index++) {
+        const empolyer = empolyerTechnicalSupport[index].Name;
+
+        let createCodeForempolyerTechnicalSupport = `
+            <div class="person">
+                <img class="profil_img" src="./assets/img/profilbild.png" alt="">
+                <p class="profil_name">${empolyer}</p>
+            </div>
+        `;
+        if (index === 0) {
+            getTemplatBeginningFortechnicalSupport(createCodeForempolyerTechnicalSupport, toggleWidth_technicalSupport, show_template_technicalSupport);
+        } 
+        else if (index === empolyerTechnicalSupport.length - 1) {
+            getTemplatLastElementFortechnicalSupport(createCodeForempolyerTechnicalSupport, show_template_technicalSupport);
+        } 
+        else if (index % 3 === 0) {
+            getTemplatFirstElementFortechnicalSupport(createCodeForempolyerTechnicalSupport);
+        } else if (index % 3 === 2) {
+            getTemplatThirdElementFortechnicalSupport(createCodeForempolyerTechnicalSupport);
+        }
+        else {
+            getTemplatNextElementFortechnicalSupport(createCodeForempolyerTechnicalSupport);
+        }
     }
+}
+
+function getTemplatBeginningFortechnicalSupport(createCodeForempolyerTechnicalSupport, toggleWidth_technicalSupport, show_template_technicalSupport) {
+    let html = `<div class="profile_technical_support">`;
+    template_technicalSupport_html += `${html} ${createCodeForempolyerTechnicalSupport}`; // Header sofort schließen
+    toggleWidth_technicalSupport.classList.remove("width_for_technicalSupport");
+    show_template_technicalSupport.classList.remove('unfold-close');
+    show_template_technicalSupport.classList.add('unfold');
+}
+
+function getTemplatFirstElementFortechnicalSupport(createCodeForempolyerTechnicalSupport){
+    template_technicalSupport_html += `<div class="profil_content">${createCodeForempolyerTechnicalSupport}`;
+}
+
+function getTemplatNextElementFortechnicalSupport(createCodeForempolyerTechnicalSupport){
+    template_technicalSupport_html += createCodeForempolyerTechnicalSupport;
+}
+
+function getTemplatThirdElementFortechnicalSupport(createCodeForempolyerTechnicalSupport){
+    template_technicalSupport_html += `${createCodeForempolyerTechnicalSupport}</div>`; // Profil_content schließen
+}
+function getTemplatLastElementFortechnicalSupport(createCodeForempolyerTechnicalSupport,show_template_technicalSupport) {
+    template_technicalSupport_html += `${createCodeForempolyerTechnicalSupport}</div> </div>`
+    show_template_technicalSupport.innerHTML =`${template_technicalSupport_html}`
 }
 
 function helpFunctionForshowtechnicalSupport(box, head, empolyerTechnicalSupport) {
