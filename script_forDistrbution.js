@@ -49,6 +49,8 @@ function showDistribution() {
 }
 
 
+
+// no Region
 function getDistrubtionEmployerWithNoRegion(show_template_distribution, toggleWidth_distribution) {
      template_Distributiont_html  = ` <div class="profile">`
          for (let index = 0; index < empolyerDistributionWithNoRegion.length; index++) {
@@ -60,11 +62,11 @@ function getDistrubtionEmployerWithNoRegion(show_template_distribution, toggleWi
     } else if (index === empolyerDistributionWithNoRegion.length - 1) {
         showLasttemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion)
     } else if (index % 3 === 0) {
-        showThirdtemplate_developmentwithNoRegion(createCodeForempolyerDistribution)
+        showThirdtemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion)
     }else if (index % 3 === 2) {
-        showThirdtemplate_developmentwithNoRegion(createCodeForempolyerDistribution)
+        showThirdtemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion)
     } else
-        showNexttemplate_developmentwithNoRegion(createCodeForempolyerDistribution) 
+        showNexttemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion) 
     }
 }
 
@@ -72,29 +74,38 @@ function getDistrubtionEmployerWithNoRegion(show_template_distribution, toggleWi
 
 
 
-function showThirdtemplate_developmentwithNoRegion(createCodeForempolyerDistribution) {
-     template_Distributiont_html += `${createCodeForempolyerDistribution}</div>`
+function showThirdtemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion) {
+     template_Distributiont_html += `${createCodeForempolyerDistributionWithNoRegion}</div>`
 }
 
-function showFirsttemplate_developmentwithNoRegion(createCodeForempolyerDistribution) {
-     template_Distributiont_html += ` <div class="persons-container">${createCodeForempolyerDistribution}`
+function showFirsttemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion) {
+     template_Distributiont_html += ` <div class="persons-container">${createCodeForempolyerDistributionWithNoRegion}`
 }
 
-function showBeginningtemplate_developmentwithNoRegion(createCodeForempolyerDistribution, toggleWidth_distribution) {
-    template_Distributiont_html += ` <div class="persons-container">${createCodeForempolyerDistribution}`
+function showBeginningtemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion, toggleWidth_distribution) {
+    template_Distributiont_html += ` <div class="persons-container">${createCodeForempolyerDistributionWithNoRegion}`
     toggleWidth_distribution.classList.remove("width_for_distribution");
     show_template_distribution.classList.remove('unfold-close');
     show_template_distribution.classList.add('unfold')
 }
 
-function showNexttemplate_developmentwithNoRegion(createCodeForempolyerDistribution) {
-     template_Distributiont_html += ` ${createCodeForempolyerDistribution}`
+function showNexttemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion) {
+     template_Distributiont_html += ` ${createCodeForempolyerDistributionWithNoRegion}`
 }
 
 
-function showLasttemplate_developmentwithNoRegion(createCodeForempolyerDistribution) {
-     template_Distributiont_html += ` ${createCodeForempolyerDistribution}</div> </div`;
+function showLasttemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion) {
+     template_Distributiont_html += ` ${createCodeForempolyerDistributionWithNoRegion}</div> </div`;
 }
+
+
+
+
+// Region INT
+
+
+
+
 
 function getDistrubtionEmployer(empolyerDistribution, show_template_technicalSupport, toggleWidth_technicalSupport) {
     template_Distributiont_html  = ` <div class="profile">`

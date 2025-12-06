@@ -1,6 +1,9 @@
 let empolyer = [];
 let template_technicalSupport_html  = `<div  class="profile_header">`
-let template_Distributiont_html  = `<div class="profile">`
+
+
+
+
 async function getData() {
     let response = await fetch("./empolyer.json");
     empolyer = await response.json();
@@ -128,106 +131,73 @@ function getDistrubtionEmployer(empolyerDistribution, show_template_technicalSup
         `;
 
         if (!employer.Region) {
-                template_developmentwithNoRegion(empolyerDistribution, createCodeForempolyerDistribution, index, show_template_technicalSupport, toggleWidth_technicalSupport)
-        } else {
-            
+                template_DistrubtionEmployertwithNoRegion(empolyerDistribution, createCodeForempolyerDistribution, index, show_template_technicalSupport, toggleWidth_technicalSupport)
         }
-index === empolyerTechnicalSupport.length - 1
-        if (index === 0) {
-            getTemplatBeginningFortechnicalSupport(createCodeForempolyerTechnicalSupport, toggleWidth_technicalSupport, show_template_technicalSupport);
+
+        checkTemplateForDistrubtionEmployer(createCodeForempolyerDistribution, index, empolyerDistribution,  employer, show_template_technicalSupport, toggleWidth_technicalSupport )
+}
+
+}
+
+function checkTemplateForDistrubtionEmployer(createCodeForempolyerDistribution, index, empolyerDistribution,  employer, show_template_technicalSupport, toggleWidth_technicalSupport) {
+        
+        if (employer.Region === "NO.INT") {
+            gettemplate_developmentwithRegionNOINT(createCodeForempolyerDistribution, index, empolyerDistribution,  employer);
+        } 
+        else if (index === empolyerTechnicalSupport.length - 1) {
+            getTemplatLastElementFortechnicalSupport(createCodeForempolyerTechnicalSupport, show_template_technicalSupport);
         } 
         else if (index % 3 === 0) {
             getTemplatFirstElementFortechnicalSupport(createCodeForempolyerTechnicalSupport);
-        } 
-        else if (index % 3 === 2 && index !== empolyerTechnicalSupport.length - 1) {
+        } else if (index % 3 === 2) {
             getTemplatThirdElementFortechnicalSupport(createCodeForempolyerTechnicalSupport);
-        } else if (index === empolyerTechnicalSupport.length - 1) {
-            getTemplatLastElementFortechnicalSupport(createCodeForempolyerTechnicalSupport, show_template_technicalSupport);
         }
         else {
             getTemplatNextElementFortechnicalSupport(createCodeForempolyerTechnicalSupport);
         }
-    }
 }
 
 
-function template_developmentwithNoRegion(empolyerDistribution, createCodeForempolyerDistribution, index, show_template_technicalSupport, toggleWidth_technicalSupport) {
+function gettemplate_developmentwithRegionNOINT(createCodeForempolyerDistribution, index, empolyerDistribution,  employer) {
+
+    if (employer.Region === "NO.INT" && firstNOINTShownDistributionWithRegion === false) {
+        template_Distributiont_html += `
+    <div class="profile_for_distribution">
+    <h6 class="sub_line_distribution">NO.INT</h6>
+    <div class="persons-container"> ${createCodeForempolyerDistribution}`
+    firstNOINTShownDistributionWithRegion =true
+    } else if (index % 3 === 0 &&firstNOINTShownDistributionWithRegion === true) {
    
-    if (index === empolyerDistribution.length - 1) {
-           showLasttemplate_developmentwithNoRegion(createCodeForempolyerDistribution)
-    } else if (index % 3 === 2) {
-        showThirdtemplate_developmentwithNoRegion(createCodeForempolyerDistribution)
-    } else if (index % 3 === 0) {
-            showFirsttemplate_developmentwithNoRegion(createCodeForempolyerDistribution)
-    }{
-        showNexttemplate_developmentwithNoRegion(createCodeForempolyerDistribution) 
+
+    }else {
+
     }
 
-    toggleWidth_technicalSupport.classList.remove("width_for_distribution");
-    show_template_technicalSupport.classList.remove('unfold-close');
-    show_template_technicalSupport.classList.add('unfold')
+}
+
+function gettemplate_developmentwithNoRegion(createCodeForempolyerDistribution, index, empolyerDistribution,  employer) {
+
+        if (index === 0) {
+            getTemplatBeginningFortechnicalSupport(createCodeForempolyerTechnicalSupport, toggleWidth_technicalSupport, show_template_technicalSupport);
+        } 
+        else if (index === empolyerTechnicalSupport.length - 1) {
+            getTemplatLastElementFortechnicalSupport(createCodeForempolyerTechnicalSupport, show_template_technicalSupport);
+        } 
+        else if (index % 3 === 0) {
+            getTemplatFirstElementFortechnicalSupport(createCodeForempolyerTechnicalSupport);
+        } else if (index % 3 === 2) {
+            getTemplatThirdElementFortechnicalSupport(createCodeForempolyerTechnicalSupport);
+        }
+        else {
+            getTemplatNextElementFortechnicalSupport(createCodeForempolyerTechnicalSupport);
+        }
     
 }
 
 
-function showThirdtemplate_developmentwithNoRegion(createCodeForempolyerDistribution) {
-     template_Distributiont_html += `${createCodeForempolyerDistribution}</div>`
-}
-
-function showFirsttemplate_developmentwithNoRegion(createCodeForempolyerDistribution) {
-     template_Distributiont_html += ` <div class="persons-container">${createCodeForempolyerDistribution}`
-}
-
-function showNexttemplate_developmentwithNoRegion(createCodeForempolyerDistribution) {
-     template_Distributiont_html += ` ${createCodeForempolyerDistribution}`
-}
-
-
-function showLasttemplate_developmentwithNoRegion(createCodeForempolyerDistribution) {
-     template_Distributiont_html += ` ${createCodeForempolyerDistribution}</div> </div`;
-}
-
-function getTemplatBeginningForDistribution(createCodeForempolyerTechnicalSupport, toggleWidth_technicalSupport, show_template_technicalSupport) {
-    let html = `<div class="profile_technical_support">`;
-    template_technicalSupport_html += `${html} ${createCodeForempolyerTechnicalSupport}`; // Header sofort schließen
-    toggleWidth_technicalSupport.classList.remove("width_for_technicalSupport");
-    show_template_technicalSupport.classList.remove('unfold-close');
-    show_template_technicalSupport.classList.add('unfold');
-}
-
-function getTemplatFirstElementForDistribution(createCodeForempolyerTechnicalSupport){
-    template_technicalSupport_html += `<div class="profil_content">${createCodeForempolyerTechnicalSupport}`;
-}
-
-function getTemplatNextElementForDistribution(createCodeForempolyerTechnicalSupport){
-    template_technicalSupport_html += createCodeForempolyerTechnicalSupport;
-}
-
-function getTemplatThirdElementForDistribution(createCodeForempolyerTechnicalSupport){
-    template_technicalSupport_html += `${createCodeForempolyerTechnicalSupport}</div>`; // Profil_content schließen
-}
-function getTemplatLastElementDistributiont(createCodeForempolyerTechnicalSupport,show_template_technicalSupport) {
-    template_technicalSupport_html += `${createCodeForempolyerTechnicalSupport}</div> </div>`
-    show_template_technicalSupport.innerHTML =`${template_technicalSupport_html}`
-}
 
 
 
-
-
-function helpFunctionForshowDistribution(empolyerDistribution, box, head) {
-    box.innerHTML = template_distribution(empolyerDistribution);
-    head.classList.remove("width_for_distribution");
-    box.classList.remove('unfold-close');
-    box.classList.add('unfold');
-}
-
-function helpFunctionForcloseDistribution(box, head) {
-    box.classList.remove('unfold');
-    box.classList.add('unfold-close');
-    setTimeout(() => { box.innerHTML = ""; }, 300);
-    head.classList.add("width_for_distribution");
-}
 
 
 
