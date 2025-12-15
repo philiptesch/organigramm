@@ -9,31 +9,32 @@ let empolyerDistributionWithRegionNOINT;
 let empolyerDistributionWithRegionSWCH;
 let empolyerDistributionWithRegionSOAT;
 
-function getDataDistributionWithRegonNoRegion() {
-    return empolyer.filter(empl => empl.Department && !empl.Region);
+function getDataDistributionWithNoRegion() {
+    return empolyer.filter(empl => 
+        empl.Department === "Vertrieb" &&
+        empl.Region === undefined )
 }
 
 
-function getDataDistributionWithRegionSWCH () {
-    return empolyer.filter(empl => empl.Department && empl.Region === "Vertrieb" && "SW.CH ");
+function getDataDistributionWithRegionSWCH() {
+    return empolyer.filter(empl => 
+        empl.Department === "Vertrieb" &&  empl.Region === "SW.CH");
 }
-
 
 function getDataDistributionWithRegionSOAT() {
-    return empolyer.filter(empl => empl.Department && empl.Region === "Vertrieb" && "SO.AT");
+    return empolyer.filter(empl =>    empl.Department === "Vertrieb" && empl.Region === "SO.AT");
 }
-
 
 function getDataDistributionWithRegionNOINT() {
-    return empolyer.filter(empl => empl.Department && empl.Region === "Vertrieb" && "NO.INT");
+    return empolyer.filter(empl => empl.Department === "Vertrieb" && empl.Region === "NO.INT");
 }
-
 
 
 function showDistribution() {
     let show_template_distribution = document.getElementById("distribution");
     let toggleWidth_distribution = document.getElementById("distribution_head_id");
-    empolyerDistributionWithNoRegion = getDataDistributionWithRegionNoRegion();
+    empolyerDistributionWithNoRegion = getDataDistributionWithNoRegion();
+    
     empolyerDistributionWithRegionNOINT = getDataDistributionWithRegionNOINT();
     empolyerDistributionWithRegionSWCH = getDataDistributionWithRegionSWCH();
     empolyerDistributionWithRegionSOAT = getDataDistributionWithRegionSOAT();
@@ -58,15 +59,23 @@ function getDistrubtionEmployerWithNoRegion(show_template_distribution, toggleWi
         let createCodeForempolyerDistributionWithNoRegion = ` <div class="person"> <img class="profil_img" src="./assets/img/profilbild.png" alt=""> <p class="profil_name">${empolyerNameWithNoRegion}</p></div> `;
 
     if (index === 0) {
-           showBeginningtemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion, toggleWidth_distribution)
+           showBeginningtemplate_developmentwithNoRegion(show_template_distribution, createCodeForempolyerDistributionWithNoRegion, toggleWidth_distribution)
+           if (index === empolyerDistributionWithNoRegion.length - 1) {
+            endingtemplate_developmentwithNoRegion()
+           }
     } else if (index === empolyerDistributionWithNoRegion.length - 1) {
         showLasttemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion)
     } else if (index % 3 === 0) {
-        showThirdtemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion)
+        showFirsttemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion)
     }else if (index % 3 === 2) {
         showThirdtemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion)
     } else
         showNexttemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion) 
+    }
+
+    if (empolyerDistributionWithRegionNOINT == 0  && empolyerDistributionWithRegionSOAT == 0 && empolyerDistributionWithRegionSWCH == 0  ) {
+        show_template_distribution.innerHTML = template_Distributiont_html
+        toggleWidth_distribution.classList.add("width_for_distribution");
     }
 }
 
@@ -82,7 +91,7 @@ function showFirsttemplate_developmentwithNoRegion(createCodeForempolyerDistribu
      template_Distributiont_html += ` <div class="persons-container">${createCodeForempolyerDistributionWithNoRegion}`
 }
 
-function showBeginningtemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion, toggleWidth_distribution) {
+function showBeginningtemplate_developmentwithNoRegion(show_template_distribution, createCodeForempolyerDistributionWithNoRegion, toggleWidth_distribution) {
     template_Distributiont_html += ` <div class="persons-container">${createCodeForempolyerDistributionWithNoRegion}`
     toggleWidth_distribution.classList.remove("width_for_distribution");
     show_template_distribution.classList.remove('unfold-close');
@@ -95,13 +104,193 @@ function showNexttemplate_developmentwithNoRegion(createCodeForempolyerDistribut
 
 
 function showLasttemplate_developmentwithNoRegion(createCodeForempolyerDistributionWithNoRegion) {
-     template_Distributiont_html += ` ${createCodeForempolyerDistributionWithNoRegion}</div> </div`;
+     template_Distributiont_html += ` ${createCodeForempolyerDistributionWithNoRegion}</div> </div>`;
+     console.log('template_Distributiont_html', template_Distributiont_html);
+     
+}
+
+function endingtemplate_developmentwithNoRegion() {
+    template_Distributiont_html += `</div> </div>`
+}
+
+
+
+// Region INT
+
+function getDistrubtionEmployerRegionNOINT(show_template_distribution, toggleWidth_distribution){
+        template_Distributiont_html  += ` <div class="profile_for_distribution"><h6 class="sub_line_distribution">NO.INT</h6>`
+         for (let index = 0; index < empolyerDistributionWithRegionNOINT.length; index++) {
+        const empolyerNameWithRegionNOINT = empolyerDistributionWithRegionNOINT[index].Name;
+        let createCodeForempolyerDistributionWithRegionNOINT = ` <div class="person"> <img class="profil_img" src="./assets/img/profilbild.png" alt=""> <p class="profil_name">${empolyerNameWithRegionNOINT}</p></div> `;
+
+    if (index === 0) {
+           showBeginningtemplate_developmentwithRegionNOINT(createCodeForempolyerDistributionWithRegionNOINT)
+
+           if (index === empolyerDistributionWithRegionNOINT.length - 1) {
+                endingtemplate_developmentRegionNOINT()
+           }
+    } else if (index === empolyerDistributionWithRegionNOINT.length - 1) {
+        showLasttemplate_developmentwithRegionNOINT(createCodeForempolyerDistributionWithRegionNOINT)
+    } else if (index % 3 === 0) {
+        showFirsttemplate_developmentwithRegionNOINT(createCodeForempolyerDistributionWithRegionNOINT)
+    }else if (index % 3 === 2) {
+        showThirdtemplate_developmentwithRegionNOINT(createCodeForempolyerDistributionWithRegionNOINT)
+    } else
+        showNexttemplate_developmentwithRegionNOINT(createCodeForempolyerDistributionWithRegionNOINT) 
+    }
+
+    
+    if (empolyerDistributionWithRegionSOAT == 0 && empolyerDistributionWithRegionSWCH == 0  ) {
+        show_template_distribution.innerHTML = `${template_Distributiont_html}</div>`
+        console.log('template_Distributiont_html',template_Distributiont_html);
+        
+        toggleWidth_distribution.classList.add("width_for_distribution");
+    }
+}
+
+
+function endingtemplate_developmentRegionNOINT() {
+    template_Distributiont_html += `</div> </div>`
+}
+
+
+
+function showThirdtemplate_developmentwithRegionNOINT(createCodeForempolyerDistributionWithRegionNOINT) {
+     template_Distributiont_html += `${createCodeForempolyerDistributionWithRegionNOINT}</div>`
+}
+
+function showFirsttemplate_developmentwithRegionNOINT(createCodeForempolyerDistributionWithRegionNOINT) {
+     template_Distributiont_html += ` <div class="persons-container">${createCodeForempolyerDistributionWithRegionNOINT}`
+}
+
+function showBeginningtemplate_developmentwithRegionNOINT(createCodeForempolyerDistributionWithRegionNOINT) {
+    template_Distributiont_html += ` <div class="persons-container">${createCodeForempolyerDistributionWithRegionNOINT}`
+}
+
+function showNexttemplate_developmentwithRegionNOINT(createCodeForempolyerDistributionWithRegionNOINT) {
+     template_Distributiont_html += ` ${createCodeForempolyerDistributionWithRegionNOINT}`
+}
+
+
+function showLasttemplate_developmentwithRegionNOINT(createCodeForempolyerDistributionWithRegionNOINT) {
+     template_Distributiont_html += ` ${createCodeForempolyerDistributionWithRegionNOINT}</div> </div>`;
+}
+
+
+function getDistrubtionEmployerRegionSWCH(show_template_distribution, toggleWidth_distribution){
+        template_Distributiont_html  += `<div class="profile_for_distribution"><h6 class="sub_line_distribution">SW.CH</h6>`
+         for (let index = 0; index < empolyerDistributionWithRegionSWCH.length; index++) {
+        const empolyerNameWithRegionSWCH = empolyerDistributionWithRegionSWCH[index].Name;
+        let createCodeForempolyerDistributionWithRegionSWCH = ` <div class="person"> <img class="profil_img" src="./assets/img/profilbild.png" alt=""> <p class="profil_name">${empolyerNameWithRegionSWCH}</p></div> `;
+
+    if (index === 0) {
+           showBeginningtemplate_developmentwithRegionSWCH(createCodeForempolyerDistributionWithRegionSWCH)
+
+        if (index === empolyerDistributionWithRegionSWCH.length - 1) {
+            endingtemplate_developmentRegionSWCH();
+        }
+
+    } else if (index === empolyerDistributionWithRegionSWCH.length - 1) {
+        showLasttemplate_developmentwithRegionSWCH(createCodeForempolyerDistributionWithRegionSWCH)
+    } else if (index % 3 === 0) {
+        showFirsttemplate_developmentwithRegionSWCH(createCodeForempolyerDistributionWithRegionSWCH)
+    }else if (index % 3 === 2) {
+        showThirdtemplate_developmentwithRegionSWCH(createCodeForempolyerDistributionWithRegionSWCH)
+    } else
+        showNexttemplate_developmentwithRegionSWCH(createCodeForempolyerDistributionWithRegionSWCH) 
+    }
+
+    
+    if (empolyerDistributionWithRegionSOAT == 0  ) {
+        show_template_distribution.innerHTML = `${template_Distributiont_html}</div>`
+        console.log('template_Distributiont_html',template_Distributiont_html);
+        toggleWidth_distribution.classList.add("width_for_distribution");
+    }
+}
+
+
+function endingtemplate_developmentRegionSWCH() {
+    template_Distributiont_html += `</div> </div>`
+}
+
+
+function showThirdtemplate_developmentwithRegionSWCH(createCodeForempolyerDistributionWithRegionSWCH) {
+     template_Distributiont_html += `${createCodeForempolyerDistributionWithRegionSWCH}</div>`
+}
+
+function showFirsttemplate_developmentwithRegionSWCH(createCodeForempolyerDistributionWithRegionSWCH) {
+     template_Distributiont_html += ` <div class="persons-container">${createCodeForempolyerDistributionWithRegionSWCH}`
+}
+
+function showBeginningtemplate_developmentwithRegionSWCH(createCodeForempolyerDistributionWithRegionSWCH) {
+    template_Distributiont_html += ` <div class="persons-container">${createCodeForempolyerDistributionWithRegionSWCH}`
+}
+
+function showNexttemplate_developmentwithRegionSWCH(createCodeForempolyerDistributionWithRegionSWCH) {
+     template_Distributiont_html += ` ${createCodeForempolyerDistributionWithRegionSWCH}`
+}
+
+
+function showLasttemplate_developmentwithRegionSWCH(createCodeForempolyerDistributionWithRegionSWCH) {
+     template_Distributiont_html += ` ${createCodeForempolyerDistributionWithRegionSWCH}</div> </div>`;
 }
 
 
 
 
-// Region INT
+function getDistrubtionEmployerRegionSOAT(show_template_distribution, toggleWidth_distribution){
+        template_Distributiont_html  += `<div class="profile_for_distribution"><h6 class="sub_line_distribution">SO.AT</h6>`
+         for (let index = 0; index < empolyerDistributionWithRegionSOAT.length; index++) {
+        const empolyerNameWithRegionSOAT = empolyerDistributionWithRegionSOAT[index].Name;
+        let createCodeForempolyerDistributionWithRegionSOAT = ` <div class="person"> <img class="profil_img" src="./assets/img/profilbild.png" alt=""> <p class="profil_name">${empolyerNameWithRegionSOAT}</p></div> `;
+
+    if (index === 0) {
+           showBeginningtemplate_developmentwithRegionSOAT(createCodeForempolyerDistributionWithRegionSOAT)
+
+           if (index === empolyerDistributionWithRegionSOAT.length - 1) {
+                endingtemplate_developmentRegionSOAT();
+           }
+    } else if (index === empolyerDistributionWithRegionSWCH.length - 1) {
+        showLasttemplate_developmentwithRegionSOAT(createCodeForempolyerDistributionWithRegionSOAT)
+    } else if (index % 3 === 0) {
+        showFirsttemplate_developmentwithRegionSOAT(createCodeForempolyerDistributionWithRegionSOAT)
+    }else if (index % 3 === 2) {
+        showThirdtemplate_developmentwithRegionSOAT(createCodeForempolyerDistributionWithRegionSOAT)
+    } else
+        showNexttemplate_developmentwithRegionSOAT(createCodeForempolyerDistributionWithRegionSOAT) 
+    }
+
+        show_template_distribution.innerHTML += `${template_Distributiont_html}</div>`
+        console.log('template_Distributiont_html',template_Distributiont_html);
+        toggleWidth_distribution.classList.add("width_for_distribution");
+}
+
+
+function endingtemplate_developmentRegionSOAT() {
+    template_Distributiont_html += `</div> </div>`
+}
+
+
+function showThirdtemplate_developmentwithRegionSOAT(createCodeForempolyerDistributionWithRegionSOAT) {
+     template_Distributiont_html += `${createCodeForempolyerDistributionWithRegionSOAT}</div>`
+}
+
+function showFirsttemplate_developmentwithRegionSOAT(createCodeForempolyerDistributionWithRegionSOAT) {
+     template_Distributiont_html += ` <div class="persons-container">${createCodeForempolyerDistributionWithRegionSOAT}`
+}
+
+function showBeginningtemplate_developmentwithRegionSOAT(createCodeForempolyerDistributionWithRegionSOAT) {
+    template_Distributiont_html += ` <div class="persons-container">${createCodeForempolyerDistributionWithRegionSOAT}`
+}
+
+function showNexttemplate_developmentwithRegionSOAT(createCodeForempolyerDistributionWithRegionSOAT) {
+     template_Distributiont_html += ` ${createCodeForempolyerDistributionWithRegionSOAT}`
+}
+
+
+function showLasttemplate_developmentwithRegionSOAT(createCodeForempolyerDistributionWithRegionSOAT) {
+     template_Distributiont_html += ` ${createCodeForempolyerDistributionWithRegionSOAT}</div> </div>`;
+}
 
 
 

@@ -264,7 +264,6 @@ border-image: linear-gradient(to right,
     background-color: white;
     align-items: center;
     margin-top: 10px;
-    height: 120px;
     gap: 2px;
     flex-direction: column;
 }
