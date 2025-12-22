@@ -8,32 +8,13 @@ async function getData() {
     let response = await fetch("./empolyer.json");
     empolyer = await response.json();
     console.log('response', empolyer);
-    getDataDistribution();
-    getDataAccountMgmt();
-    getDataPartnerMgmt();
-    getDataGFQReferent();
-    getDataIntOperation();
 }
 
 function getDataDistribution() {
     return empolyer.filter(empl => empl.Department === "Vertrieb");
 }
 
-function getDataAccountMgmt() {
-    return empolyer.filter(empl => empl.Department === "KeyAccountMgmt");
-}
 
-function getDataPartnerMgmt() {
-    return empolyer.filter(empl => empl.Department === "PartnerMgmt");
-}
-
-function getDataGFQReferent() {
-    return empolyer.filter(empl => empl.Department === "GFQ-Referent");
-}
-
-function getDataIntOperation() {
-    return empolyer.filter(empl => empl.Department === "Int.Operations");
-}
 
 function getTechnicalSupport() {
     return empolyer.filter(emp => emp.Department === "Technical Support");
