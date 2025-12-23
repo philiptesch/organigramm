@@ -601,6 +601,33 @@ border-image: linear-gradient(to right,
     justify-content: center;
     flex-direction: column;
 }
+
+
+.profil_content_for_HrandAccounting {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.profil_content_for_ItAndtechnic {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.profil_content_for_LegalDepartment {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+
 .distribution_headline,
 .keyaccount_headline,
 .partner_headline,

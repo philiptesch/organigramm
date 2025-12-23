@@ -32,33 +32,6 @@ function getOfficeAndSalesCoordination() {
     return empolyer.filter(emp => emp.Department === "Office & Sales Coordination");
 }
 
-function getMarketingAndDesign() {
-    return empolyer.filter(emp => emp.Department === "Marketing & Design");
-}
-
-function getPRStrategy() {
-    return empolyer.filter(emp => emp.Department === "PR & Strategie");
-}
-
-function getInternalCommunication() {
-    return empolyer.filter(emp => emp.Department === "Internat Communication");
-}
-
-function getProcessOptimization() {
-    return empolyer.filter(emp => emp.Department === "Prozessoptimierung");
-}
-
-function getHRAndAccounting() {
-    return empolyer.filter(emp => emp.Department === "HR & Rechnungswesen");
-}
-
-function getITAndTechnology() {
-    return empolyer.filter(emp => emp.Department === "IT & Technik");
-}
-
-function getLegalDepartment() {
-    return empolyer.filter(emp => emp.Department === "Rechtsabteilung");
-}
 
 function getExecutiveTeamCTO() {
     return empolyer.filter(emp => emp.Department === "Vorstandsteam CTO");
@@ -364,72 +337,8 @@ function helpFunctionForcloseOfficeSalesCoordination(box, head) {
 
 
 
-function showMarketingAndDesign() {
-    let show_template_MarketingAndDesign = document.getElementById("marketingAndDesignId");
-    let toggleWidth_MarketingAndDesign = document.getElementById("marketingAndDesignHeadId");
-    let empolyerMarketingAndDesign= getMarketingAndDesign()
-    let empolyerPRStrategy= getPRStrategy()
-    let empolyerInternalCommunication= getInternalCommunication()
-    let empolyerProcessOptimization= getProcessOptimization()
-    if (show_template_MarketingAndDesign.innerHTML.trim()  === "") {
-      helpFunctionMarketingAndDesign(show_template_MarketingAndDesign, toggleWidth_MarketingAndDesign, empolyerMarketingAndDesign,
-        empolyerPRStrategy, empolyerInternalCommunication, empolyerProcessOptimization
-      )
-    } else {
-    helpFunctionForcloseMarketingAndDesign(show_template_MarketingAndDesign, toggleWidth_MarketingAndDesign)
-    }
-}
 
 
-function helpFunctionMarketingAndDesign(box, head,empolyerMarketingAndDesign,
-        empolyerPRStrategy, empolyerInternalCommunication, empolyerProcessOptimization) {
-    box.innerHTML = show_template_MarketingAndDesign(empolyerMarketingAndDesign,
-        empolyerPRStrategy, empolyerInternalCommunication, empolyerProcessOptimization);
-    head.classList.remove("width_for_marketingAndDesign");
-    box.classList.remove('unfold-close');
-    box.classList.add('unfold');
-}
-
-function helpFunctionForcloseMarketingAndDesign(box, head) {
-    box.classList.remove('unfold');
-    box.classList.add('unfold-close');
-    setTimeout(() => {
-        box.innerHTML = "";
-    }, 300);
-    head.classList.add("width_for_marketingAndDesign");
-}
-
-
-
-function showhrAndAccounting() {
-    let show_template_hrAndAccounting = document.getElementById("hrAndAccountingId");
-    let toggleWidth_hrAndAccounting= document.getElementById("hrAndAccountingHeadId");
-    let empolyerHRAndAccounting= getHRAndAccounting()
-    let empolyerITAndTechnology= getITAndTechnology()
-    let empolyerLegalDepartment= getLegalDepartment()
-    if (show_template_hrAndAccounting.innerHTML.trim()  === "") {
-      helpFunctionhrAndAccounting(show_template_hrAndAccounting, toggleWidth_hrAndAccounting, empolyerHRAndAccounting, empolyerITAndTechnology, empolyerLegalDepartment)
-    } else {
-    helpFunctionForclosehrAndAccounting(show_template_hrAndAccounting, toggleWidth_hrAndAccounting)
-    }
-}
-
-
-function helpFunctionhrAndAccounting(box, head, empolyerHRAndAccounting, empolyerITAndTechnology, empolyerLegalDepartment) {
-    box.innerHTML = show_template_hrAndAccounting(empolyerHRAndAccounting, empolyerITAndTechnology, empolyerLegalDepartment);
-    head.classList.remove("width_for_hr_and_accounting");
-    box.classList.remove('unfold-close');
-    box.classList.add('unfold');
-}
-
-function helpFunctionForclosehrAndAccounting(box, head) {
-    box.classList.remove('unfold');
-    box.classList.add('unfold-close');
-    setTimeout(() => {
-        box.innerHTML = "";
-    }, 300);
-    head.classList.add("width_for_hr_and_accounting");
-}
 
 
 function showDevelopment() {

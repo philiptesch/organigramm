@@ -291,7 +291,7 @@ function show_template_MarketingAndDesign(empolyerMarketingAndDesign,
   <!-- Marketing & Design -->
 
 
-  
+
                  <div class="processOptimization">
                        <div class="other_departments_under_marketing">
                         <div class="other_departments_under_marketing_headline_processOptimization"><h4 class="other_departments_under_marketing_headline">Prozessoptimierung</h4>
@@ -310,7 +310,7 @@ function show_template_MarketingAndDesign(empolyerMarketingAndDesign,
 function show_template_hrAndAccounting(empolyerHRAndAccounting, empolyerITAndTechnology, empolyerLegalDepartment) {
     return `<div class="profile_header_for_hr_and_accounting">
                     <div class="profile_hr_and_accounting">
-                        <div class="profil_content">
+                        <div class="profil_content_for_HrandAccounting">
                         <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerHRAndAccounting[0].Name}</p></div>
                         <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerHRAndAccounting[1].Name}</p></div>
                         <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerHRAndAccounting[2].Name}</p></div>
@@ -327,7 +327,7 @@ function show_template_hrAndAccounting(empolyerHRAndAccounting, empolyerITAndTec
                       <div class="other_departments_under_marketing">
                     <div class="other_departments_under_marketing_headline_itAndtechnic"><h4 class="other_departments_under_marketing_headline">IT & Technik</h4>
                      <p>${empolyerITAndTechnology[0].Name}</p></div>
-                  <div class="profil_content">
+                  <div class="profil_content_for_ItAndtechnic">
                   <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerITAndTechnology[0].Name}</p></div>
                   <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerITAndTechnology[1].Name}</p></div>
                   <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerITAndTechnology[2].Name}</p></div>
@@ -335,11 +335,13 @@ function show_template_hrAndAccounting(empolyerHRAndAccounting, empolyerITAndTec
                     </div>
                 </div>
                 </div>
+
+
                 <div class="legal_department">
                   <div class="other_departments_under_marketing">
                     <div class="other_departments_under_marketing_headline_legal_department"><h4 class="other_departments_under_marketing_headline">Rechtsabteilung </h4>
                      <p>${empolyerLegalDepartment[0].Name}</p></div>
-                  <div class="profil_content">
+                  <div class="profil_content_for_LegalDepartment">
                         <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerLegalDepartment[0].Name}</p></div>
                     </div>
 `
