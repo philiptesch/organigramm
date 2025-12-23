@@ -79,11 +79,12 @@ function template_showkeyAccountMgmt(empolyerAccountMgmt
                     <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">Max 1</p></div>
                 </div>
                       </div>
+
+
+
                  <div class="partner_content">
                 <div class="partner_head"><h4 class="partner_headline">Partner Mgmt</h4>
                       <p>${empolyerAccountMgmt[0].Name} </p></div>
-
-
                 <div class="profile_partner_mgmt">
                     <div class="profile_head">
                         <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerPartnerMgmt[0].Name}</p></div>
@@ -93,6 +94,9 @@ function template_showkeyAccountMgmt(empolyerAccountMgmt
                     <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerPartnerMgmt[2].Name}</p></div>
                 </div>
                 </div>
+
+
+
                   <div class="gfq_Referent_content">
                 <div class="gfq_Referent">
                     <div class="gfq_Referent_head"><h4 class="gfq_Referent_headline">GFQ-Referent</h4>      
@@ -107,6 +111,10 @@ function template_showkeyAccountMgmt(empolyerAccountMgmt
 
                   <div class="gfq_Referent_content">
                 <div class="int_operations">
+
+
+
+
                     <div class="int_operations_head"><h4 class="int_operations_headline">Int-Operations</h4>
                      <p>Klaus </p></div>
                     <div class="profile">
@@ -255,6 +263,8 @@ function show_template_MarketingAndDesign(empolyerMarketingAndDesign,
                     </div>
                     </div>
                     </div>
+
+
                 <!-- Marketing & Design -->
                  <div class="prAndStrategie">
                     <div class="other_departments_under_marketing_headline_prAndStrategi">
@@ -266,6 +276,8 @@ function show_template_MarketingAndDesign(empolyerMarketingAndDesign,
                     </div>
                 </div>
                 </div>
+
+
   <!-- Marketing & Design -->
    <div class="internalCommunications">
                 
@@ -277,6 +289,9 @@ function show_template_MarketingAndDesign(empolyerMarketingAndDesign,
                     </div>                </div>
                 </div>
   <!-- Marketing & Design -->
+
+
+  
                  <div class="processOptimization">
                        <div class="other_departments_under_marketing">
                         <div class="other_departments_under_marketing_headline_processOptimization"><h4 class="other_departments_under_marketing_headline">Prozessoptimierung</h4>
@@ -348,6 +363,8 @@ function template_development(empolyerExecutiveTeamCTO,
                     </div>
                 </div>
 
+
+
                 <div class="board">
                     <h6 class="sub_line">Quality Engineering</h6>
                     <div class="board_team">
@@ -360,6 +377,9 @@ function template_development(empolyerExecutiveTeamCTO,
                     </div>
                 </div>
   </div>
+
+
+
                 <div class="development_test">
                     <h6 class="sub_line">Softwaretest</h6>
                        <div class="board_team">
@@ -370,6 +390,10 @@ function template_development(empolyerExecutiveTeamCTO,
 
                 </div>
             </section>
+
+
+
+
 
             <section class="boardAndQualityEngineering">
                   <div class="horizontal_boards">
@@ -384,6 +408,8 @@ function template_development(empolyerExecutiveTeamCTO,
                         <div class="person"><img class="profil_img" src="./assets/img/profilbild.png" alt=""><p class="profil_name">${empolyerResourceAndData[3].Name}</p></div>
                     </div>
                 </div>
+
+
 
                 <div class="board">
                     <h6 class="sub_line">Quality Management</h6>
@@ -408,6 +434,9 @@ function template_development(empolyerExecutiveTeamCTO,
                     </div>
                 </div>
                 </div>
+
+
+                
                      <div class="development_test">
                     <h6 class="sub_line">Dokumentation</h6>
                             <div class="board_team">

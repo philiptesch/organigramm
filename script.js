@@ -194,43 +194,6 @@ function gettemplate_developmentwithNoRegion(createCodeForempolyerDistribution, 
 
 
 
-
-function showkeyAccountMgmt() {
-    let show_template_showkeyAccountMgmt = document.getElementById("keyAccountMgmt");
-    let toggleWidth_keyaccount = document.getElementById("keyaccount_head_id");
-    let empolyerAccountMgmt = getDataAccountMgmt();
-    let empolyerPartnerMgmt = getDataPartnerMgmt();
-    let empolyerGFQReferent = getDataGFQReferent();
-    let empolyerIntOperation = getDataIntOperation();
-
-    if (show_template_showkeyAccountMgmt.innerHTML.trim() === "") {
-        helpFunctionForshowkeyAccountMgmt(
-            show_template_showkeyAccountMgmt,
-            toggleWidth_keyaccount,
-            empolyerAccountMgmt,
-            empolyerPartnerMgmt,
-            empolyerGFQReferent,
-            empolyerIntOperation
-        );
-    } else {
-        helpFunctionForclosekeyAccountMgmt(show_template_showkeyAccountMgmt, toggleWidth_keyaccount);
-    }
-}
-
-function helpFunctionForshowkeyAccountMgmt(box, head, empolyerAccountMgmt, empolyerPartnerMgmt, empolyerGFQReferent, empolyerIntOperation) {
-    box.innerHTML = template_showkeyAccountMgmt(empolyerAccountMgmt, empolyerPartnerMgmt, empolyerGFQReferent, empolyerIntOperation);
-    head.classList.remove("width_for_keyaccount");
-    box.classList.remove('unfold-close');
-    box.classList.add('unfold');
-}
-
-function helpFunctionForclosekeyAccountMgmt(box, head) {
-    box.classList.remove('unfold');
-    box.classList.add('unfold-close');
-    setTimeout(() => { box.innerHTML = ""; }, 300);
-    head.classList.add("width_for_keyaccount");
-}
-
 function showtechnicalSupport() {
     let show_template_technicalSupport = document.getElementById("technical_supportId");
     let toggleWidth_technicalSupport = document.getElementById("technical_support_headId");

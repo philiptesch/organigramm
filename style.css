@@ -257,6 +257,30 @@ border-image: linear-gradient(to right,
     gap: 2px;
 }
 
+.profile_for_Gfq_Referent{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    margin-top: 10px;
+    gap: 2px;
+    flex-direction: column;
+}
+
+
+.profile_for_Int_operations{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    margin-top: 10px;
+    gap: 2px;
+    flex-direction: column;
+}
+
+
 .profile_for_distribution {
     width: 100%;
     justify-content: center;
@@ -279,11 +303,11 @@ border-image: linear-gradient(to right,
     display: flex;
     background-color: white;
     align-items: center;
-    height: 120px;
     gap: 2px;
     border: solid 5px #c3c1c1;
     box-sizing: border-box;
     border-top: solid 8px #c3c1c1;;
+    flex-direction: column;
 }
 
 
@@ -489,6 +513,10 @@ border-image: linear-gradient(to right,
     margin-bottom: 10px;
 }
 
+.int_operations_content {
+    margin-top: 10px;
+}
+
 
 .gfq_Referent {
     background-color: #c3c1c1;
@@ -565,6 +593,13 @@ border-image: linear-gradient(to right,
     display: flex;
     gap: 2px;
     justify-content: center;
+}
+
+.profil_contentForMargetingAndDesingDepartment {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    flex-direction: column;
 }
 .distribution_headline,
 .keyaccount_headline,
@@ -767,6 +802,7 @@ text-decoration: underline;
     border: solid 5px #c3c1c1;
     border-top: solid 8px #c3c1c1;
     box-sizing: border-box;
+    flex-direction: column;
 }
 
 
